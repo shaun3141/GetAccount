@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Starter Template - Materialize</title>
+  <title>GetAccount</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -23,27 +23,27 @@
 </head>
 <body>
   <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">GetAccount</a>
+      <!-- <ul class="right hide-on-med-and-down">
         <li><a href="#">Navbar Link</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
         <li><a href="#">Navbar Link</a></li>
       </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
     </div>
   </nav>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-      <h1 class="header center orange-text">Starter Template</h1>
+      <h3 class="header center orange-text">GetAccount takes a domain and tells you a whole lot more.</h3>
       <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        <h5 class="header col s12 light">Powered by <a href="https://www.clearbit.com" target="_blank">Clearbit</a>, we make getting account details as easy as 1, 2, 3</h5>
       </div>
-      <div class="row center">
+      <!-- <div class="row center">
         <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-      </div>
+      </div> -->
       <br><br>
 
     </div>
@@ -53,32 +53,44 @@
   <div class="container">
     <div class="section">
 
-      <!--   Icon Section   -->
+      <!--   Main   -->
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="">Clearbit Token</h5>
+            <div class="input-field">
+                <input id="sk_field" type="text">
+                <label for="sk_field">Example: sk_3141xxxxxxxxxxxxx5926535</label>
+                <span class="helper-text">Clearbit Secret Key</span>
+            </div>
+            <p class="light">Your secret key isn't going anywere, it's just used in this page and refreshing the page clears everything.</p>
+            <p class="light">There's no server whatsoever behind this app to store things and all the source code is hanging out right <a href="https://github.com/shaun3141/GetAccount">here</a>, its really just this single page</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            <h5 class="">Domain</h5>
+            <div class="input-field">
+                <input id="domain_field" type="text">
+                <label for="domain_field">Example: google.com</label>
+                <span class="helper-text">Domain</span>
+            </div>
+            <div class="row">
+                <div id="augment" class="btn-large waves-effect waves-light orange">Augment</div>
+            </div>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="">The Details</h5>
+            <div style="line-height: 200%;" id="details">
+              <p>Add your domain and click <b>Augment</b> to see the results</p>
+            </div>
           </div>
         </div>
       </div>
@@ -91,12 +103,17 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <h5 class="white-text">About GetAccount</h5>
+          <p class="grey-text text-lighten-4">
+            GetAccount was built to take a list of domains and give you a .csv file of account properties you can use to create new accounts in Salesforce or put elsewhere.
+          </p>
+          <p class="grey-text text-lighten-4">
+            To start with though, it just augments a single domain for now. Hopefully lots more to come soon!
+          </p>
 
 
         </div>
-        <div class="col l3 s12">
+        <!-- <div class="col l3 s12">
           <h5 class="white-text">Settings</h5>
           <ul>
             <li><a class="white-text" href="#!">Link 1</a></li>
@@ -113,12 +130,12 @@
             <li><a class="white-text" href="#!">Link 3</a></li>
             <li><a class="white-text" href="#!">Link 4</a></li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      Made by <a class="orange-text text-lighten-3" target="_blank" href="https://www.linkedin.com/in/svanweelden/">Shaun VanWeelden</a>
       </div>
     </div>
   </footer>
@@ -127,7 +144,30 @@
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+
+  <script>
+    $("#augment").click(function() {
+      $.ajax({
+        url: 'https://company.clearbit.com/v2/companies/find?domain=' + $("#domain_field").val(),
+        type: 'GET',
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader ("Authorization", "Basic " + btoa($("#sk_field").val() + ":"));
+        },
+        success: function(data){
+          console.log(data);
+          console.log(data.name);
+
+          let details = "";
+          details += `<b>Name:</b> ${data.name}<br>`; 
+          details += `<b>Company Type:</b> ${data.type}<br>`; 
+          details += `<b>Industry:</b> ${data.category.industry}<br>`; 
+          details += `<b>Location:</b> ${data.geo.city},  ${data.geo.state}  ${data.geo.country}<br>`; 
+          details += `<b>Description:</b> ${data.description}<br>`;          
+          $("#details").html(details)
+        },
+      });
+    });
+  </script>
 
   </body>
 </html>
